@@ -1,48 +1,66 @@
-﻿namespace orientado_objetos;
+﻿namespace tipo_nulo;
 
 class Program
 {
     static void Main(string[] args)
     {
-        //crear un nuevo objeto persona y utilizar sus metodos
+        MetodoHasValue();
+        MetodoGetValueOrDefault();
+        MetodoValue();
 
-        Persona humano = new Persona();//constructor default
+    }
 
-        humano.SetNombre("bryan");
-        humano.SetColorPelo("Negro");
-        humano.SetColorOjos("cafe");
-        humano.SetAltura(1.7f);
 
-        humano.Hablar();
-        humano.Caminar(10);
+    static void MetodoValue()
+    {
+        Console.WriteLine("Metodo Value");
+        int? x = null;
+        x = 100;
+        int y = 0;
+        try
+        {
+            y = x.Value;
+            Console.WriteLine("Ahora Y´ tiene valor de :" + y);
+        }
+        catch
+        {
+            Console.WriteLine("Operacion No Valida");
+        }
+      
 
-        Console.WriteLine("la perosna con nombre:" +humano.GetNombre());
-        Console.WriteLine("Tiene color de pelo:" + humano.GetColorPelo());
-        Console.WriteLine("Tiene color de ojos :" + humano.GetColorOjos());
-        Console.WriteLine("tiene una altura de :" + humano.GetAlutra());
+    }
 
-        //persona con constructor 
 
-        PersonaConstructor humano2 = new PersonaConstructor(  "Ivana","cafe","negro",1.65f);
-        Console.WriteLine( "\nla perosna con nombre:" + humano2.GetNombre());
-        Console.WriteLine("Tiene color de pelo:" + humano2.GetColorPelo());
-        Console.WriteLine("Tiene color de ojos :" + humano2.GetColorOjos());
-        Console.WriteLine("tiene una altura de :" + humano2.GetAlutra());
 
-        humano2.Caminar(5);
-        humano2.Hablar();
 
-        hijoConstru humano3 = new hijoConstru("Gaby", "verdes", "cafe", 1.0f, "fran","erick");
-        Console.WriteLine("\nla perosna con nombre:" + humano3.GetNombre());
-        Console.WriteLine("Tiene color de pelo:" + humano3.GetColorPelo());
-        Console.WriteLine("Tiene color de ojos :" + humano3.GetColorOjos());
-        Console.WriteLine("tiene una altura de :" + humano3.GetAlutra());
-        Console.WriteLine("su madre se llama :" + humano3.Getmadre());
-        Console.WriteLine("su padre se llama :" + humano3.Getpadre());
-        humano3.Llora();
-        humano3.Caminar(1);
-        humano3.Hablar();
 
+
+    static void MetodoGetValueOrDefault()
+    {
+        Console.WriteLine("Get value Or Default");
+        int? i = null;
+        i = 10; 
+        Boolean? b = null;
+        b = true;
+        Console.WriteLine(i.GetValueOrDefault() );
+        Console.WriteLine(b.GetValueOrDefault() );
+
+
+    }
+
+
+
+
+
+    static void MetodoHasValue()
+    {
+        Console.WriteLine("Has Value");
+        int? i = null;
+      //  i = 10;
+        if (i.HasValue)
+            Console.WriteLine("Tiene valor : " + i.Value);
+        else
+            Console.WriteLine("Tiene valor NULL");
 
     }
 }

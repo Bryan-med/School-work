@@ -1,0 +1,191 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Formulario </title>
+</head>
+<body>
+
+    <form>
+        <fieldset>
+            <legend>
+                Formulario De Datos Personales
+            </legend>
+
+            <label>
+                Nombre
+            </label>
+            <input type="text" name ="variableNombre">
+
+                Email
+            </label>
+            <input type="email"name="variableEmail">
+            <input type="submit" value="Enviar">
+
+            <label>
+                Password
+            </label>
+            <input type="password"name="contrasenia">
+            <input type="submit" value="Enviar">
+
+        </fieldset>
+    </form>
+<!-- We made a new form  -->
+    <form>
+        <fieldset>
+            <legend>
+                Selecionar Animales
+            </legend>
+
+            <label>
+                Perro
+            </label>
+            <input type="radio" name="Animales" value="perro">
+
+            <label>
+                Gato
+            </label>
+            <input type="radio" name="Animales" value="gato">
+            
+            <lable>
+                guajolote
+            </lable>
+            <input type="radio" name="Animales" value="guajolote">
+        </fieldset>
+
+        <fieldset>
+            <legend>
+                Selecionar Pasa Tiempos
+            </legend>
+            <label>
+                Juagr video juegos
+            </label>
+            <input type="checkbox" name ="pasatiempo1" value="videojuegos">
+
+            <label>
+                Ir al gym
+            </label>
+            <input type="checkbox" name ="pasatiempo2" value="gym">
+    
+            <label>
+                Programar
+            </label>
+            <input type="checkbox" name ="pasatiempo3" value="programar">
+            <!-- you can choose more than one option when you use checkboxes
+             and it uses diffrent variable names-->
+
+        </fieldset>
+
+        <fieldset>
+            <legend>
+                Rango
+            </legend>
+            <label>
+                Rango De Interes
+            </label>
+            <input type="range" name="Rango" min="0" max="100">
+
+            <label>
+                Color
+            </label>
+            <input type="color" name="Color">
+
+        </fieldset>
+    
+        <input type="submit" value="Enviar">
+
+        <input type="submit" value ="Enviar">
+        <input type="reset" value="Resetear/borrar">
+<!-- only use this in really special cases, it will delete all the information that you have written in the form -->
+    </form>
+<!-- We made a new button where you can submit a color -->
+ <form>
+    <fieldset>
+        <legend> 
+            Seleccionable de animales
+            <!-- legend es el titulo del fieldset -->
+        </legend>
+        <select name="animales"> 
+            <option>
+                Perro 
+            </option>
+<!-- each option has to be in its on bracket  -->
+            <option value="2" >
+                <!-- estos values manda el valor que tu quieras, en este caso es 2 al servidor en lugar de decir gato va mandar el numero 2 al servidor -->
+                Gato
+            </option>
+ <!-- each option has to be in its on bracket  -->
+            <option>
+                guajolote
+            </option>
+<!-- each option has to be in its on bracket  -->
+        </select>
+    </fieldset>
+
+<fieldset>
+    <legend>
+        Lenuguaje de Programacion
+    </legend>
+<!-- Legend es el titulo del fieldset, es como un subtitulo de la seccion que estas haciendo, en este caso es el lenguaje de programacion -->
+
+    <select name ="lenguaje">
+ <option value=""> selecciona un lenguaje de programacion</option>
+
+        <optgroup label="Lenguajes front end">
+            <option value="html">HTML</option>
+            <option value="css">CSS</option>
+            <option value="Javascript">Javascript</option>
+        </optgroup> 
+ <!-- grupo 1 -->
+
+        <optgroup label="Lenguajes back end">
+            <option value="php">PHP</option>
+            <option value="python">Python</option>
+            <option value="java">Java</option>
+        </optgroup>
+<!-- grupo 2 -->
+
+    </select>
+</fieldset>
+
+<fieldset>
+    <legend>
+        Variados
+    </legend>
+    <label> busca una ciudad en jalisco</label>
+    <input type="search" name="ciudad" list="Ciudades">
+    <datalist id="Ciudades">
+        <option value="Guadalajara"> </option>
+        <option value="Zapopan"> </option>
+        <option value="Tlaquepaque"> </option>
+        <option value="Tonala"> </option>
+        <option value="Tlajomulco de Zuniga"> </option>
+        <option value="El Sato"> </option>
+    </datalist>
+<br/>
+    <label> Barras de progreso</label>
+    <progress value="10" max="100"> </progress>
+    <progress max="100"></progress>
+<br/> 
+    <textarea name="text area" maxlength="100" cols="20" rows="10"> excibe una frase que te motiva</textarea>
+<br/> 
+<!-- <br/> salta la linea  -->
+<input type="text" name="nombrePlaceHolder" placeholder="agrega tu nombre">
+<input type="email" name="emailPlaceHolder" placeholder="Agrega tu email" required="put your email please">
+
+
+
+</fieldset>
+
+    <input type="submit" value="Enviar">
+    <!-- esto es un botton de enviar -->
+     <button type="submit">
+        Enviar pero desde boton 
+     </button>
+     <!-- esto tambien es un boton de enviar -->
+ </form>
+
+
+</body>
+</html>
